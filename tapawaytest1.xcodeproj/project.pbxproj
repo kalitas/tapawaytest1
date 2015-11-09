@@ -13,6 +13,14 @@
 		348DF1A31BF096D600B27711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 348DF1A11BF096D600B27711 /* Main.storyboard */; };
 		348DF1A51BF096D600B27711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 348DF1A41BF096D600B27711 /* Assets.xcassets */; };
 		348DF1A81BF096D600B27711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 348DF1A61BF096D600B27711 /* LaunchScreen.storyboard */; };
+		348DF1BB1BF096F500B27711 /* CSAlwaysOnTopHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 348DF1B01BF096F500B27711 /* CSAlwaysOnTopHeader.m */; settings = {ASSET_TAGS = (); }; };
+		348DF1BC1BF096F500B27711 /* CSAlwaysOnTopHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348DF1B11BF096F500B27711 /* CSAlwaysOnTopHeader.xib */; settings = {ASSET_TAGS = (); }; };
+		348DF1BD1BF096F500B27711 /* CSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 348DF1B31BF096F500B27711 /* CSCell.m */; settings = {ASSET_TAGS = (); }; };
+		348DF1BE1BF096F500B27711 /* CSSearchBarHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348DF1B41BF096F500B27711 /* CSSearchBarHeader.xib */; settings = {ASSET_TAGS = (); }; };
+		348DF1BF1BF096F500B27711 /* CSSectionHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 348DF1B61BF096F500B27711 /* CSSectionHeader.m */; settings = {ASSET_TAGS = (); }; };
+		348DF1C01BF096F500B27711 /* CSStickyHeaderFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 348DF1B81BF096F500B27711 /* CSStickyHeaderFlowLayout.m */; settings = {ASSET_TAGS = (); }; };
+		348DF1C11BF096F500B27711 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 348DF1BA1BF096F500B27711 /* CSStickyHeaderFlowLayoutAttributes.m */; settings = {ASSET_TAGS = (); }; };
+		348DF1C31BF09E4100B27711 /* CSCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 348DF1C21BF09E4100B27711 /* CSCell1.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,19 @@
 		348DF1A41BF096D600B27711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		348DF1A71BF096D600B27711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		348DF1A91BF096D600B27711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		348DF1AF1BF096F500B27711 /* CSAlwaysOnTopHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAlwaysOnTopHeader.h; sourceTree = "<group>"; };
+		348DF1B01BF096F500B27711 /* CSAlwaysOnTopHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAlwaysOnTopHeader.m; sourceTree = "<group>"; };
+		348DF1B11BF096F500B27711 /* CSAlwaysOnTopHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSAlwaysOnTopHeader.xib; sourceTree = "<group>"; };
+		348DF1B21BF096F500B27711 /* CSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSCell.h; sourceTree = "<group>"; };
+		348DF1B31BF096F500B27711 /* CSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSCell.m; sourceTree = "<group>"; };
+		348DF1B41BF096F500B27711 /* CSSearchBarHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSSearchBarHeader.xib; sourceTree = "<group>"; };
+		348DF1B51BF096F500B27711 /* CSSectionHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSSectionHeader.h; sourceTree = "<group>"; };
+		348DF1B61BF096F500B27711 /* CSSectionHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSSectionHeader.m; sourceTree = "<group>"; };
+		348DF1B71BF096F500B27711 /* CSStickyHeaderFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSStickyHeaderFlowLayout.h; sourceTree = "<group>"; };
+		348DF1B81BF096F500B27711 /* CSStickyHeaderFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSStickyHeaderFlowLayout.m; sourceTree = "<group>"; };
+		348DF1B91BF096F500B27711 /* CSStickyHeaderFlowLayoutAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSStickyHeaderFlowLayoutAttributes.h; sourceTree = "<group>"; };
+		348DF1BA1BF096F500B27711 /* CSStickyHeaderFlowLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSStickyHeaderFlowLayoutAttributes.m; sourceTree = "<group>"; };
+		348DF1C21BF09E4100B27711 /* CSCell1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CSCell1.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +83,19 @@
 				348DF19C1BF096D600B27711 /* AppDelegate.m */,
 				348DF19E1BF096D600B27711 /* ViewController.h */,
 				348DF19F1BF096D600B27711 /* ViewController.m */,
+				348DF1AF1BF096F500B27711 /* CSAlwaysOnTopHeader.h */,
+				348DF1B01BF096F500B27711 /* CSAlwaysOnTopHeader.m */,
+				348DF1B11BF096F500B27711 /* CSAlwaysOnTopHeader.xib */,
+				348DF1C21BF09E4100B27711 /* CSCell1.xib */,
+				348DF1B21BF096F500B27711 /* CSCell.h */,
+				348DF1B31BF096F500B27711 /* CSCell.m */,
+				348DF1B41BF096F500B27711 /* CSSearchBarHeader.xib */,
+				348DF1B51BF096F500B27711 /* CSSectionHeader.h */,
+				348DF1B61BF096F500B27711 /* CSSectionHeader.m */,
+				348DF1B71BF096F500B27711 /* CSStickyHeaderFlowLayout.h */,
+				348DF1B81BF096F500B27711 /* CSStickyHeaderFlowLayout.m */,
+				348DF1B91BF096F500B27711 /* CSStickyHeaderFlowLayoutAttributes.h */,
+				348DF1BA1BF096F500B27711 /* CSStickyHeaderFlowLayoutAttributes.m */,
 				348DF1A11BF096D600B27711 /* Main.storyboard */,
 				348DF1A41BF096D600B27711 /* Assets.xcassets */,
 				348DF1A61BF096D600B27711 /* LaunchScreen.storyboard */,
@@ -136,6 +170,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348DF1BC1BF096F500B27711 /* CSAlwaysOnTopHeader.xib in Resources */,
+				348DF1C31BF09E4100B27711 /* CSCell1.xib in Resources */,
+				348DF1BE1BF096F500B27711 /* CSSearchBarHeader.xib in Resources */,
 				348DF1A81BF096D600B27711 /* LaunchScreen.storyboard in Resources */,
 				348DF1A51BF096D600B27711 /* Assets.xcassets in Resources */,
 				348DF1A31BF096D600B27711 /* Main.storyboard in Resources */,
@@ -149,8 +186,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				348DF1C01BF096F500B27711 /* CSStickyHeaderFlowLayout.m in Sources */,
+				348DF1BB1BF096F500B27711 /* CSAlwaysOnTopHeader.m in Sources */,
+				348DF1C11BF096F500B27711 /* CSStickyHeaderFlowLayoutAttributes.m in Sources */,
 				348DF1A01BF096D600B27711 /* ViewController.m in Sources */,
 				348DF19D1BF096D600B27711 /* AppDelegate.m in Sources */,
+				348DF1BD1BF096F500B27711 /* CSCell.m in Sources */,
+				348DF1BF1BF096F500B27711 /* CSSectionHeader.m in Sources */,
 				348DF19A1BF096D600B27711 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

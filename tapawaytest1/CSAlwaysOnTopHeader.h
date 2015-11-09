@@ -10,7 +10,9 @@
 
 @interface CSAlwaysOnTopHeader : CSCell
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (nonatomic, strong) NSArray *sections;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView1;
 
 @end
