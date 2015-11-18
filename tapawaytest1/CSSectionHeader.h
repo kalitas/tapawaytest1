@@ -10,6 +10,6 @@
 
 @interface CSSectionHeader : UICollectionReusableView
 
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet UISearchBar *bar;
 
 @end
