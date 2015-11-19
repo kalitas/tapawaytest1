@@ -94,11 +94,6 @@
             layout.parallaxHeaderReferenceSize = CGSizeZero;
             layout.parallaxHeaderMinimumReferenceSize = CGSizeZero;
             layout.itemSize = CGSizeMake(self.view.frame.size.width, layout.itemSize.height);
-            layout.parallaxHeaderAlwaysOnTop = NO;
-            
-            // If we want to disable the sticky header effect
-            layout.disableStickyHeaders = NO;
-
         }
         else
         {
@@ -159,60 +154,13 @@
     return nil;
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-
-    self.isSearchOn = YES;
-
-    if (searchText.length > 0) {
-        // search and reload data source
-        [self filterContentForSearchText:searchText
-                                   scope:nil];
-        [self reloadDataSmooth];
-    }
-    else if (searchBar.text.length == 0)
-    {
-        //self.dataSource = [NSMutableArray arrayWithArray:self.dataSourceOriginal];
-        self.filterArray = [NSMutableArray arrayWithArray:self.dataSourceOriginal];
-        [self reloadDataSmooth];
-    //    [self scrollToSearchBar];
-        [self.searchBar becomeFirstResponder];
-    }
-}
-
--(BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
-    self.isSearchOn = YES;
-    [self reloadLayout];
-    return YES;
-}
-
-- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope{
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
-    
-    self.filterArray = [NSMutableArray arrayWithArray:[self.dataSourceFromServer filteredArrayUsingPredicate:predicate]];
-}
-
-- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
-{
-    self.isSearchOn = NO;
-    self.dataSource = [NSMutableArray arrayWithArray:self.dataSourceOriginal];
-    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
-    [self.searchBar resignFirstResponder];
-    [self reloadLayout];
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-    self.isSearchOn = YES;
-
-    [self.searchBar resignFirstResponder];
-}
-
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
    
     return  CGSizeMake(0, 44);
 
 }
 
+#pragma mark UICollectionView Refresh
 -(void)deleteItemsFromDataSourceAtIndexPaths:(NSArray *)itemPaths
 {
     NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSet];
@@ -260,23 +208,74 @@
     [self.searchBar becomeFirstResponder];
 }
 
-- (void)scrollToSearchBar  {
+#pragma mark UISearchBar
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     
+    self.isSearchOn = YES;
+    
+    if (searchText.length > 0) {
+        // search and reload data source
+        [self filterContentForSearchText:searchText
+                                   scope:nil];
+        [self reloadDataSmooth];
+    }
+    else if (searchBar.text.length == 0)
+    {
+        self.filterArray = [NSMutableArray arrayWithArray:self.dataSourceOriginal];
+        [self reloadDataSmooth];
+        [self.searchBar becomeFirstResponder];
+    }
+}
+
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    self.isSearchOn = YES;
+    [self scrollToSearchBar];
+    return YES;
+}
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchText];
+    
+    self.filterArray = [NSMutableArray arrayWithArray:[self.dataSourceFromServer filteredArrayUsingPredicate:predicate]];
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.isSearchOn = NO;
+    self.dataSource = [NSMutableArray arrayWithArray:self.dataSourceOriginal];
+    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+    [self.searchBar resignFirstResponder];
+    [self reloadLayout];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    self.isSearchOn = YES;
+    
+    [self.searchBar resignFirstResponder];
+}
+
+- (void)scrollToSearchBar  {
+   
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
     UICollectionViewLayoutAttributes *attributes = [self.collectionView.collectionViewLayout layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
 
     CGPoint topOfHeader = CGPointMake(0, attributes.frame.origin.y - self.collectionView.contentInset.top + self.headerHeight);
-    [self.collectionView setContentOffset:topOfHeader animated:self.searchBar.text.length == 0];
-}
+    [UIView animateWithDuration:0.35
+                          delay:0.0
+                        options: UIViewAnimationOptionCurveEaseOut
+                     animations:^
+     {
+         [self.collectionView setContentOffset:topOfHeader animated:YES];
+     }
+                     completion:^(BOOL finished)
+     {
+         [self reloadLayout];
+         CGPoint newTopOfHeader = CGPointMake(0, attributes.frame.origin.y - self.collectionView.contentInset.top);
 
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
-    UIView *topView = self.searchBar.subviews[0];
-    for (UIView *subView in topView.subviews) {
-        if ([subView isKindOfClass:NSClassFromString(@"UINavigationButton")]) {
-            [(UIButton*)subView setEnabled:YES];
-        }
-    }
-}
+         [self.collectionView setContentOffset:newTopOfHeader animated:NO];
 
+     }];
+}
 
 @end
